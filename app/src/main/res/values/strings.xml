@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Force Fitness</string>
     <string name="muscles">Muscles</string>
+    <string name="Quads">Quads</string>
+    <string name="Lats">Lats</string>
+    <string name="Hamstrings">Hamstrings</string>
+    <string name="Glutes">Glutes</string>
+    <string name="Forearms">Forearms</string>
+    <string name="Chest">Chest</string>
+    <string name="Calves">Calves</string>
+    <string name="Biceps">Biceps</string>
+    <string name="Abs">Abdominal</string>
 </resources>
