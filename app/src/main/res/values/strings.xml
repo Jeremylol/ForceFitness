@@ -10,4 +10,12 @@
     <string name="Calves">Calves</string>
     <string name="Biceps">Biceps</string>
     <string name="Abs">Abdominal</string>
+    <string name="Shoulders">Shoulders</string>
+    <string name="Traps">Traps</string>
+    <string name="Triceps">Triceps</string>
+    <string name="schedule">Schedule</string>
+    <string name="about">About</string>
+    <string name="profile">Profile</string>
+    <string name="login">Log In</string>
+    <string name="location">Location</string>
 </resources>
