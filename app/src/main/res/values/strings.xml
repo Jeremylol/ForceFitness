@@ -13,9 +13,10 @@
     <string name="Shoulders">Shoulders</string>
     <string name="Traps">Traps</string>
     <string name="Triceps">Triceps</string>
-    <string name="schedule">Schedule</string>
+    <string name="schedule">Workout Schedule</string>
     <string name="about">About</string>
-    <string name="profile">Profile</string>
+    <string name="workout">Workout Routines</string>
+    <string name="muscleInformation">Muscle Information</string>
     <string name="login">Log In</string>
-    <string name="location">Location</string>
+    <string name="profile">Profile</string>
 </resources>
