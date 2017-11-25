@@ -16,7 +16,7 @@
     <string name="schedule">Workout Schedule</string>
     <string name="about">About</string>
     <string name="workout">Workout Routines</string>
-    <string name="muscleInformation">Muscle Information</string>
+    <string name="Favorites">Favorite Workouts</string>
     <string name="login">Log In</string>
     <string name="profile">Profile</string>
 </resources>
