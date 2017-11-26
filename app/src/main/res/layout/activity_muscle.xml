@@ -165,18 +165,33 @@
                 tools:ignore="RtlHardcoded" />
 
             <Button
+                android:id="@+id/button7"
+                android:layout_width="0dp"
+                android:layout_height="175dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/Lats"
+                android:textSize="35sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button6"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
                 android:id="@+id/button8"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/Latsandlowerbody"
+                android:text="@string/LowerBack"
                 android:textSize="35sp"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button6"
+                app:layout_constraintTop_toBottomOf="@+id/button7"
                 tools:ignore="RtlHardcoded" />
 
             <Button
@@ -353,12 +368,27 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/Latsandlowerbody"
+                android:contentDescription="@string/Lats"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/Hamstrings"
                 app:srcCompat="@mipmap/lats"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/LowerBack"
+                android:layout_width="0dp"
+                android:layout_height="175dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/LowerBack"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/Lats"
+                app:srcCompat="@mipmap/lower_back"
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
@@ -372,7 +402,7 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/Lats"
+                app:layout_constraintTop_toBottomOf="@+id/LowerBack"
                 app:srcCompat="@mipmap/shoulders"
                 tools:ignore="RtlHardcoded" />
 
