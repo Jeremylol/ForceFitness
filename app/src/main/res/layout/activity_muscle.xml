@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
@@ -10,31 +11,31 @@
         android:id="@+id/my_toolbar"
         android:layout_width="0dp"
         android:layout_height="100dp"
+        android:title="@string/muscles"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
         android:background="@color/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:title="@string/muscles"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:navigationIcon="@drawable/ic_back_arrow"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_back_arrow"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:titleTextAppearance="@style/Toolbar.TitleText"
         app:titleTextColor="@color/colorWords"
-        tools:targetApi="lollipop" />
+        tools:targetApi="lollipop"
+        android:layout_marginTop="0dp"
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintVertical_bias="0.0">
 
         <android.support.constraint.ConstraintLayout
@@ -51,11 +52,11 @@
                 tools:layout_editor_absoluteY="25dp" />
 
             <android.support.constraint.Guideline
-                android:id="@+id/guideline2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_begin="108dp" />
+                android:id="@+id/guideline2"
+                app:layout_constraintGuide_begin="108dp"
+                android:orientation="horizontal" />
 
             <Button
                 android:id="@+id/button0"
@@ -70,8 +71,9 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline"
                 app:layout_constraintRight_toRightOf="parent"
+                tools:ignore="RtlHardcoded"
                 app:layout_constraintTop_toTopOf="@+id/guideline2"
-                tools:ignore="RtlHardcoded" />
+                android:layout_marginTop="8dp" />
 
             <Button
                 android:id="@+id/button1"
@@ -170,7 +172,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/Lats"
+                android:text="@string/Latsandlowerbody"
                 android:textSize="35sp"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline"
@@ -227,42 +229,42 @@
                 android:id="@+id/button12"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
-                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:text="@string/Quads"
                 android:textSize="35sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/button11"
+                app:layout_constraintBottom_toBottomOf="parent"
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
+                android:contentDescription="@string/Abs"
                 android:id="@+id/Abs"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@string/Abs"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
-                app:layout_constraintTop_toTopOf="@+id/guideline2"
                 app:srcCompat="@mipmap/abs"
-                tools:ignore="RtlHardcoded" />
+                tools:ignore="RtlHardcoded"
+                app:layout_constraintTop_toTopOf="@+id/guideline2"
+                android:layout_marginTop="8dp" />
 
             <ImageView
+                android:contentDescription="@string/Biceps"
                 android:id="@+id/Biceps"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/Biceps"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
@@ -271,13 +273,13 @@
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
+                android:contentDescription="@string/Calves"
                 android:id="@+id/Calves"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/Calves"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
@@ -286,13 +288,13 @@
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
+                android:contentDescription="@string/Chest"
                 android:id="@+id/Chest"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/Chest"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
@@ -301,13 +303,13 @@
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
+                android:contentDescription="@string/Forearms"
                 android:id="@+id/Forearms"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/Forearms"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
@@ -316,13 +318,13 @@
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
+                android:contentDescription="@string/Glutes"
                 android:id="@+id/Glutes"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/Glutes"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
@@ -331,13 +333,13 @@
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
+                android:contentDescription="@string/Hamstrings"
                 android:id="@+id/Hamstrings"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/Hamstrings"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
@@ -346,13 +348,13 @@
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
+                android:contentDescription="@string/Lats"
                 android:id="@+id/Lats"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/Lats"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
@@ -361,13 +363,13 @@
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
+                android:contentDescription="@string/Shoulders"
                 android:id="@+id/Shoulders"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/Shoulders"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
@@ -376,13 +378,13 @@
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
+                android:contentDescription="@string/Traps"
                 android:id="@+id/Traps"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/Traps"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
@@ -391,13 +393,13 @@
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
+                android:contentDescription="@string/Triceps"
                 android:id="@+id/Triceps"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/Triceps"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
@@ -406,19 +408,19 @@
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
+                android:contentDescription="@string/Quads"
                 android:id="@+id/Quads"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
-                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/Quads"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="8dp"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/Triceps"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:srcCompat="@mipmap/quads"
                 tools:ignore="RtlHardcoded" />
 

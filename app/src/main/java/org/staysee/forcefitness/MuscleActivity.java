@@ -11,12 +11,11 @@ import android.widget.Button;
 
 public class MuscleActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_muscle);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar_muscle);
         setSupportActionBar(myToolbar);
 
         if (getSupportActionBar() != null) {
