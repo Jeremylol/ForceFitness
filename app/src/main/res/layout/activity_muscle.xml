@@ -201,14 +201,13 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/Shoulders"
+                android:text="@string/Quads"
                 android:textSize="35sp"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/button8"
                 tools:ignore="RtlHardcoded" />
-
             <Button
                 android:id="@+id/button10"
                 android:layout_width="0dp"
@@ -216,7 +215,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/Traps"
+                android:text="@string/Shoulders"
                 android:textSize="35sp"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline"
@@ -231,7 +230,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/Triceps"
+                android:text="@string/Traps"
                 android:textSize="35sp"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline"
@@ -247,7 +246,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/Quads"
+                android:text="@string/Triceps"
                 android:textSize="35sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -392,6 +391,21 @@
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
+                android:id="@+id/Quads"
+                android:layout_width="0dp"
+                android:layout_height="175dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/Quads"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/LowerBack"
+                app:srcCompat="@mipmap/quads"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
                 android:id="@+id/Shoulders"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
@@ -402,7 +416,7 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/LowerBack"
+                app:layout_constraintTop_toBottomOf="@+id/Quads"
                 app:srcCompat="@mipmap/shoulders"
                 tools:ignore="RtlHardcoded" />
 
@@ -425,32 +439,17 @@
                 android:id="@+id/Triceps"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@string/Triceps"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/Traps"
-                app:srcCompat="@mipmap/triceps"
-                tools:ignore="RtlHardcoded" />
-
-            <ImageView
-                android:id="@+id/Quads"
-                android:layout_width="0dp"
-                android:layout_height="175dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/Quads"
+                android:contentDescription="@string/Triceps"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/Triceps"
-                app:srcCompat="@mipmap/quads"
+                app:layout_constraintTop_toBottomOf="@+id/Traps"
+                app:srcCompat="@mipmap/triceps"
                 tools:ignore="RtlHardcoded" />
 
         </android.support.constraint.ConstraintLayout>
