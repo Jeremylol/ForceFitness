@@ -172,7 +172,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/Lats"
+                android:text="@string/Latsandlowerbody"
                 android:textSize="35sp"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline"
@@ -348,8 +348,8 @@
                 tools:ignore="RtlHardcoded" />
 
             <ImageView
-                android:contentDescription="@string/Lats"
-                android:id="@+id/Lats"
+                android:contentDescription="@string/Latsandlowerbody"
+                android:id="@+id/Latsandlowerbody"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
                 android:layout_marginEnd="8dp"
@@ -373,7 +373,7 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/Lats"
+                app:layout_constraintTop_toBottomOf="@+id/Latsandlowerbody"
                 app:srcCompat="@mipmap/shoulders"
                 tools:ignore="RtlHardcoded" />
 
