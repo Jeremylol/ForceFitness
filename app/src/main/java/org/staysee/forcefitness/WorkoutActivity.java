@@ -7,13 +7,13 @@ import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
 
-public class MuscleActivity extends AppCompatActivity {
+public class WorkoutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_muscle);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar_muscle);
+        setContentView(R.layout.activity_workout);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
         if (getSupportActionBar() != null) {
@@ -30,9 +30,10 @@ public class MuscleActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void toWorkoutActivity(View v) {
-        Intent myIntent = new Intent(this, WorkoutActivity.class);
+    public void toMuscleActivity(View v) {
+        Intent myIntent = new Intent(this, MuscleActivity.class);
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.fade_from_left, 0);
     }
+
 }
