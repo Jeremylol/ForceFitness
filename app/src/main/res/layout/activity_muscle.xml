@@ -66,6 +66,7 @@
                 android:layout_marginStart="8dp"
                 android:text="@string/Abs"
                 android:textSize="35sp"
+                android:onClick="toWorkoutActivity"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline"
                 app:layout_constraintRight_toRightOf="parent"
