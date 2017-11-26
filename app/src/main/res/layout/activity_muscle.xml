@@ -8,10 +8,9 @@
     tools:context="org.staysee.forcefitness.MuscleActivity">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
+        android:id="@+id/my_toolbar_muscle"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        android:title="@string/muscles"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@color/colorPrimary"
@@ -24,8 +23,8 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:titleTextAppearance="@style/Toolbar.TitleText"
         app:titleTextColor="@color/colorWords"
+        app:title="@string/muscles"
         tools:targetApi="lollipop"
-        android:layout_marginTop="0dp"
         app:layout_constraintHorizontal_bias="0.0" />
 
     <ScrollView
@@ -56,7 +55,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/guideline2"
                 app:layout_constraintGuide_begin="108dp"
-                android:orientation="horizontal" />
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteY="133dp"
+                tools:layout_editor_absoluteX="0dp" />
 
             <Button
                 android:id="@+id/button0"

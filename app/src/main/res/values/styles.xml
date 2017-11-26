@@ -8,7 +8,6 @@
 
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">40sp</item>
-        <item name="android:text">center</item>
     </style>
 
 
