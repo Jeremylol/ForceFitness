@@ -3,7 +3,6 @@ package org.staysee.forcefitness;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
@@ -19,6 +18,7 @@ public class MuscleActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }

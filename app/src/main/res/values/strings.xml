@@ -20,4 +20,5 @@
     <string name="Favorites">Favorite Workouts</string>
     <string name="login">Log In</string>
     <string name="profile">Profile</string>
+    <string name="favorites">Favorites</string>
 </resources>
