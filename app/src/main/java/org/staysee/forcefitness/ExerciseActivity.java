@@ -17,15 +17,17 @@ public class ExerciseActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar_exercise);
         setSupportActionBar(myToolbar);
 
-        String muscleGroup = getIntent().getStringExtra("EXTRA_MUSCLE_GROUP");
-        setTitle(muscleGroup);
+        String workoutTitle = getIntent().getStringExtra("EXTRA_MUSCLE_GROUP");
+        setTitle(workoutTitle);
         TextView title = (TextView) findViewById(R.id.toolbar_title);
-        title.setText(muscleGroup);
+        title.setText(workoutTitle);
 
         getWindow().setFormat(PixelFormat.UNKNOWN);
 
         VideoView video = (VideoView) findViewById(R.id.videoView);
-        video.setVideoPath("android.resource://" + getPackageName() + "/" + R.raw.airbicycle);
+
+        workoutTitle = workoutTitle.toLowerCase().replaceAll("\\s", "");
+        video.setVideoPath("android.resource://" + getPackageName() + "/raw/" + workoutTitle);
         video.requestFocus();
         video.start();
         video.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {

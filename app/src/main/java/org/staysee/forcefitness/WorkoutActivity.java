@@ -12,7 +12,6 @@ import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
 import android.support.constraint.Guideline;
 import android.widget.TextView;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
@@ -77,6 +76,15 @@ public class WorkoutActivity extends AppCompatActivity {
                 buttons[i].setText(text);
                 buttons[i].setId(i+1);
                 buttons[i].setTextSize(35);
+                buttons[i].setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Button button = (Button) v;
+                        String buttonText = button.getText().toString();
+                        Intent myIntent = new Intent(WorkoutActivity.this, ExerciseActivity.class);
+                        myIntent.putExtra("EXTRA_MUSCLE_GROUP", buttonText);
+                        startActivity(myIntent);
+                    }
+                });
                 layout.addView(buttons[i]);
                 set.connect(buttons[i].getId(), ConstraintSet.TOP, buttons[i-1].getId(), ConstraintSet.BOTTOM, 0);
                 set.connect(buttons[i].getId(),ConstraintSet.RIGHT,ConstraintSet.PARENT_ID,ConstraintSet.RIGHT,0);
@@ -103,5 +111,4 @@ public class WorkoutActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.fade_from_left, 0);
         return super.onOptionsItemSelected(item);
     }
-
 }
