@@ -35,7 +35,7 @@
     </android.support.v7.widget.Toolbar>
 
     <VideoView
-        android:id="@+id/video1"
+        android:id="@+id/videoView"
         android:layout_width="500dp"
         android:layout_height="350dp"
         android:layout_marginLeft="8dp"

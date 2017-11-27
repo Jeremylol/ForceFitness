@@ -8,7 +8,7 @@
     tools:context="org.staysee.forcefitness.WorkoutActivity">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
+        android:id="@+id/my_toolbar_workout"
         android:minHeight="100dp"
         android:layout_width="0dp"
         android:layout_height="100dp"

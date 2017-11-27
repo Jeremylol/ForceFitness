@@ -23,7 +23,7 @@ public class WorkoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar_workout);
         setSupportActionBar(myToolbar);
 
         String muscleGroup = getIntent().getStringExtra("EXTRA_MUSCLE_GROUP");
@@ -55,9 +55,12 @@ public class WorkoutActivity extends AppCompatActivity {
             buttons[0].setId(1);
             buttons[0].setTextSize(35);
             buttons[0].setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    Intent startIntent = new Intent(WorkoutActivity.this, ExerciseActivity.class);
-                    startActivity(startIntent);
+                public void onClick(View v) {
+                    Button button = (Button) v;
+                    String buttonText = button.getText().toString();
+                    Intent myIntent = new Intent(WorkoutActivity.this, ExerciseActivity.class);
+                    myIntent.putExtra("EXTRA_MUSCLE_GROUP", buttonText);
+                    startActivity(myIntent);
                 }
             });
             layout.addView(buttons[0]);
