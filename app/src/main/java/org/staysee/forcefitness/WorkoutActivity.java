@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
 import android.support.constraint.Guideline;
+import android.widget.TextView;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
@@ -26,6 +28,8 @@ public class WorkoutActivity extends AppCompatActivity {
 
         String muscleGroup = getIntent().getStringExtra("EXTRA_MUSCLE_GROUP");
         setTitle(muscleGroup);
+        TextView title = (TextView) findViewById(R.id.toolbar_title);
+        title.setText(muscleGroup);
 
         ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.Workout_Activity_Constraint_Layout);
         ConstraintSet set = new ConstraintSet();
@@ -83,6 +87,7 @@ public class WorkoutActivity extends AppCompatActivity {
         }
 
         if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
