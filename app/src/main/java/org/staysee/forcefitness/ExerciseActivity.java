@@ -25,7 +25,7 @@ public class ExerciseActivity extends AppCompatActivity {
         getWindow().setFormat(PixelFormat.UNKNOWN);
 
         VideoView video = (VideoView) findViewById(R.id.videoView);
-        video.setVideoPath("android.resource://" + getPackageName() + "/" + R.raw.test);
+        video.setVideoPath("android.resource://" + getPackageName() + "/" + R.raw.airbicycle);
         video.requestFocus();
         video.start();
         video.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
