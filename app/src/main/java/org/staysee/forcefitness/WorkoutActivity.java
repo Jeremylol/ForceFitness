@@ -33,8 +33,8 @@ public class WorkoutActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void toMuscleActivity(View v) {
-        Intent myIntent = new Intent(this, MuscleActivity.class);
+    public void toExerciseActivity(View v) {
+        Intent myIntent = new Intent(this, ExerciseActivity.class);
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.fade_from_left, 0);
     }

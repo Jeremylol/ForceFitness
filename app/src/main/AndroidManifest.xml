@@ -22,6 +22,9 @@
         <activity
             android:name=".WorkoutActivity"
             android:parentActivityName=".MuscleActivity"></activity>
+        <activity
+            android:name=".ExerciseActivity"
+            android:parentActivityName=".WorkoutActivity"></activity>
     </application>
 
 </manifest>
