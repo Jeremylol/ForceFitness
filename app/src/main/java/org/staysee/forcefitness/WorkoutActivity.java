@@ -95,4 +95,5 @@ public class WorkoutActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.fade_from_left, 0);
         return super.onOptionsItemSelected(item);
     }
+
 }
