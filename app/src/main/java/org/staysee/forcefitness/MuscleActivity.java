@@ -33,7 +33,7 @@ public class MuscleActivity extends AppCompatActivity {
     }
 
     public void onClick(View v) throws ClassNotFoundException {
-        Button button = (Button)v;
+        Button button = (Button) v;
         String buttonText = button.getText().toString();
         Intent myIntent = new Intent(this, WorkoutActivity.class);
         myIntent.putExtra("EXTRA_MUSCLE_GROUP", buttonText);
