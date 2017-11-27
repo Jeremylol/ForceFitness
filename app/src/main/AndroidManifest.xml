@@ -17,6 +17,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".LoginActivity"
+            android:parentActivityName=".MainMenuActivity"></activity>
+        <activity
             android:name=".MuscleActivity"
             android:parentActivityName=".MainMenuActivity"></activity>
         <activity

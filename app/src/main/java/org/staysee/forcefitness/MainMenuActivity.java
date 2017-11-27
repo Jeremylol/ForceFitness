@@ -19,8 +19,12 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void toMuscleActivity(View v) {
-        Intent myIntent = new Intent(this, MuscleActivity.class);
-        this.startActivity(myIntent);
+        startActivity(new Intent(this, MuscleActivity.class));
+        overridePendingTransition(R.anim.fade_from_left, 0);
+    }
+
+    public void toLoginActivity(View v) {
+        startActivity(new Intent(this, LoginActivity.class));
         overridePendingTransition(R.anim.fade_from_left, 0);
     }
 }
