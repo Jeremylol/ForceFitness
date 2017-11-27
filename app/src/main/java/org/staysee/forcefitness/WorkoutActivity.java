@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
 import android.support.constraint.Guideline;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
@@ -21,11 +20,12 @@ public class WorkoutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String muscleGroup = getIntent().getStringExtra("EXTRA_MUSCLE_GROUP");
-        setTitle(muscleGroup);
         setContentView(R.layout.activity_workout);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+
+        String muscleGroup = getIntent().getStringExtra("EXTRA_MUSCLE_GROUP");
+        setTitle(muscleGroup);
 
         ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.Workout_Activity_Constraint_Layout);
         ConstraintSet set = new ConstraintSet();
@@ -50,6 +50,12 @@ public class WorkoutActivity extends AppCompatActivity {
             buttons[0].setText(input2.nextLine());
             buttons[0].setId(1);
             buttons[0].setTextSize(35);
+            buttons[0].setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    Intent startIntent = new Intent(WorkoutActivity.this, ExerciseActivity.class);
+                    startActivity(startIntent);
+                }
+            });
             layout.addView(buttons[0]);
             set.connect(buttons[0].getId(), ConstraintSet.TOP, guideline.getId(), ConstraintSet.BOTTOM, 0);
             set.connect(buttons[0].getId(),ConstraintSet.RIGHT,ConstraintSet.PARENT_ID,ConstraintSet.RIGHT,0);
@@ -89,11 +95,4 @@ public class WorkoutActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.fade_from_left, 0);
         return super.onOptionsItemSelected(item);
     }
-
-    public void toMuscleActivity(View v) {
-        Intent myIntent = new Intent(this, MuscleActivity.class);
-        this.startActivity(myIntent);
-        overridePendingTransition(R.anim.fade_from_left, 0);
-    }
-
 }

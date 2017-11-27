@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 public class MainMenuActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,5 +23,4 @@ public class MainMenuActivity extends AppCompatActivity {
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.fade_from_left, 0);
     }
-
 }
