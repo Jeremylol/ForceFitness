@@ -9,9 +9,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 public class ExerciseActivity extends AppCompatActivity {
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +67,8 @@ public class ExerciseActivity extends AppCompatActivity {
                 return true;
 
             case R.id.action_favorite:
+                Toast.makeText(getApplicationContext(), R.string.favorites_message,
+                        Toast.LENGTH_SHORT).show();
                 return true;
 
             default:

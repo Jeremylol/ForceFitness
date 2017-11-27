@@ -28,5 +28,6 @@
     <string name="action_settings">action settings</string>
     <string name="home">home</string>
     <string name="setting">setting</string>
+    <string name="favorites_message">Successfully Added To Favorites!</string>
 
 </resources>
