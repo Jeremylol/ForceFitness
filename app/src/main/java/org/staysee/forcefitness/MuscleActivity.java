@@ -33,35 +33,11 @@ public class MuscleActivity extends AppCompatActivity {
     }
 
     public void onClick(View v) throws ClassNotFoundException {
-        switch(v.getId())
-        {
-            case R.id.button0:
-                Button b = (Button)v;
-
-                String buttonText = b.getText().toString();
-                Intent myIntent = new Intent(this, WorkoutActivity.class);
-                myIntent.putExtra("EXTRA_MUSCLE_GROUP", buttonText);
-                this.startActivity(myIntent);
-                overridePendingTransition(R.anim.fade_from_left, 0);
-                break;
-        }
-        /*
-        Button b = (Button)v;
-        String buttonText = b.getText().toString() + "Activity";
-        Log.d("CREATION", buttonText);
-        toWorkoutActivity(v, buttonText);
-        */
-    }
-    /*
-    public void toWorkoutActivity(View v, String b) throws ClassNotFoundException{
-        Intent myIntent = new Intent(this, Class.forName(b));
-        this.startActivity(myIntent);
-        overridePendingTransition(R.anim.fade_from_left, 0);
-    }
-
-    public void toWorkoutActivity(View v) {
+        Button button = (Button)v;
+        String buttonText = button.getText().toString();
         Intent myIntent = new Intent(this, WorkoutActivity.class);
+        myIntent.putExtra("EXTRA_MUSCLE_GROUP", buttonText);
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.fade_from_left, 0);
-    }*/
+    }
 }
