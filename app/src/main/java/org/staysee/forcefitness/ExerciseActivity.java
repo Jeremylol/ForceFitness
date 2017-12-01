@@ -14,6 +14,12 @@ import android.widget.VideoView;
 
 public class ExerciseActivity extends AppCompatActivity {
 
+    private static final String TAG = "ExerciseActivity";
+
+    String workoutTitle;
+
+    DatabaseHelper mDatabaseHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +27,7 @@ public class ExerciseActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar_exercise);
         setSupportActionBar(myToolbar);
 
-        String workoutTitle = getIntent().getStringExtra("EXTRA_MUSCLE_GROUP");
+        workoutTitle = getIntent().getStringExtra("EXTRA_MUSCLE_GROUP");
         setTitle(workoutTitle);
         TextView title = (TextView) findViewById(R.id.toolbar_title);
         title.setText(workoutTitle);
@@ -57,7 +63,6 @@ public class ExerciseActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.home:
-
                 finish();
                 overridePendingTransition(R.anim.fade_from_left, 0);
                 return true;
@@ -67,14 +72,23 @@ public class ExerciseActivity extends AppCompatActivity {
                 return true;
 
             case R.id.action_favorite:
-                Toast.makeText(getApplicationContext(), R.string.favorites_message,
-                        Toast.LENGTH_SHORT).show();
+                addData(workoutTitle);
                 return true;
-
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void addData(String newEntry) {
+        boolean insertData = mDatabaseHelper.addData(newEntry);
+        if (insertData) {
+            Toast.makeText(getApplicationContext(), R.string.favorites_message,
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "This is not a routine you can add",
+                    Toast.LENGTH_LONG).show();
         }
     }
 }

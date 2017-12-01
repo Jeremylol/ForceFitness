@@ -23,6 +23,9 @@
             android:name=".MuscleActivity"
             android:parentActivityName=".MainMenuActivity"></activity>
         <activity
+            android:name=".FavoritesActivity"
+            android:parentActivityName=".MainMenuActivity"></activity>
+        <activity
             android:name=".WorkoutActivity"
             android:parentActivityName=".MuscleActivity"></activity>
         <activity

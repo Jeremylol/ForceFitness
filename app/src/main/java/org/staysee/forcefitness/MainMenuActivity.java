@@ -23,6 +23,11 @@ public class MainMenuActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.fade_from_left, 0);
     }
 
+    public void toFavoritesActivity(View v) {
+        startActivity(new Intent(this, FavoritesActivity.class));
+        overridePendingTransition(R.anim.fade_from_left, 0);
+    }
+
     public void toLoginActivity(View v) {
         startActivity(new Intent(this, LoginActivity.class));
         overridePendingTransition(R.anim.fade_from_left, 0);

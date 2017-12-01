@@ -25,7 +25,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_back_arrow"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:targetApi="lollipop">
+        tools:targetApi="lollipop"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1">
 
         <TextView
             android:id="@+id/toolbar_title"
@@ -43,21 +45,21 @@
         android:layout_width="500dp"
         android:layout_height="350dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar_exercise" />
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar_exercise"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="551dp" />
+        app:layout_constraintGuide_begin="551dp"
+        tools:layout_editor_absoluteY="550dp"
+        tools:layout_editor_absoluteX="0dp" />
 
     <ScrollView
         android:id="@+id/scroller"
@@ -67,8 +69,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline2"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="@+id/guideline2">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="fill_parent"
@@ -80,8 +86,8 @@
                 android:layout_height="899dp"
                 android:layout_marginBottom="30dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginLeft="70dp"
-                android:layout_marginRight="70dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="100dp"
                 android:text="@string/description"

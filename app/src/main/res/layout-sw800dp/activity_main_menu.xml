@@ -33,7 +33,7 @@
             android:layout_gravity="center"
             android:text="@string/app_name"
             android:textColor="@color/colorWords"
-            android:textSize="50sp" />
+            android:textSize="60sp" />
     </android.support.v7.widget.Toolbar>
 
             <Button
@@ -76,7 +76,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="11dp"
                 android:background="@color/buttonColor"
-                android:onClick="toMuscleActivity"
+                android:onClick="toFavoritesActivity"
                 android:text="@string/Favorites"
                 android:textSize="40sp"
                 app:layout_constraintHorizontal_bias="0.0"
