@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="org.staysee.forcefitness.MuscleActivity">
+    tools:context="org.staysee.forcefitness.MuscleActivity"
+    android:background="@color/background">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -35,25 +36,14 @@
             android:textSize="50sp" />
     </android.support.v7.widget.Toolbar>
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
             <Button
                 android:id="@+id/workout"
                 android:layout_width="0dp"
-                android:layout_height="375dp"
-                android:layout_marginTop="3dp"
+                android:layout_height="365dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/buttonColor"
                 android:onClick="toMuscleActivity"
                 android:text="@string/workout"
                 android:textSize="40sp"
@@ -65,8 +55,11 @@
             <Button
                 android:id="@+id/schedule"
                 android:layout_width="0dp"
-                android:layout_height="375dp"
-                android:layout_marginTop="3dp"
+                android:layout_height="365dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/buttonColor"
                 android:text="@string/schedule"
                 android:textSize="40sp"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -78,10 +71,11 @@
             <Button
                 android:id="@+id/muscleInformation"
                 android:layout_width="0dp"
-                android:layout_height="375dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginTop="3dp"
+                android:layout_height="365dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/buttonColor"
                 android:onClick="toMuscleActivity"
                 android:text="@string/Favorites"
                 android:textSize="40sp"
@@ -93,10 +87,15 @@
             <Button
                 android:id="@+id/about"
                 android:layout_width="0dp"
-                android:layout_height="375dp"
-                android:layout_marginTop="3dp"
+                android:layout_height="365dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/buttonColor"
                 android:text="@string/about"
                 android:textSize="40sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline3"
                 app:layout_constraintRight_toRightOf="parent"
@@ -106,13 +105,16 @@
             <Button
                 android:id="@+id/login"
                 android:layout_width="0dp"
-                android:layout_height="375dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginTop="3dp"
-                android:text="@string/login"
+                android:layout_height="365dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/buttonColor"
                 android:onClick="toLoginActivity"
+                android:text="@string/login"
                 android:textSize="40sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline3"
@@ -121,10 +123,11 @@
             <Button
                 android:id="@+id/profile"
                 android:layout_width="0dp"
-                android:layout_height="375dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginTop="3dp"
+                android:layout_height="365dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/buttonColor"
                 android:text="@string/profile"
                 android:textSize="40sp"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -146,9 +149,5 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_begin="105dp" />
-
-        </android.support.constraint.ConstraintLayout>
-
-    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

@@ -57,6 +57,7 @@ public class ExerciseActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.home:
+
                 finish();
                 overridePendingTransition(R.anim.fade_from_left, 0);
                 return true;
