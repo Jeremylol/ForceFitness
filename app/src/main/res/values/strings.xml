@@ -3,7 +3,7 @@
     <string name="muscles">Muscles</string>
     <string name="Quads">Quads</string>
     <string name="Lats">Lats</string>
-    <string name="LowerBack">Lower Back</string>
+    <string name="Lowerback">Lowerback</string>
     <string name="Hamstrings">Hamstrings</string>
     <string name="Glutes">Glutes</string>
     <string name="Forearms">Forearms</string>
@@ -21,10 +21,7 @@
     <string name="login">Log In</string>
     <string name="profile">Profile</string>
     <string name="favorites_title">Favorites</string>
-    <string name="description"> 1)Start by lying face down on the ground.\n\n2)Place your elbows and forearms underneath your chest.\n\n
-    3)Prop yourself up to form a bridge using your toes and forearms.\n\n
-    4)Maintain a flat back and do not allow your hips to sag towards the ground.\n\n
-    5)Hold for 10-30 seconds or until you can no longer maintain a flat bridge.\n\n Repeat 2-3 times.</string>
+    <string name="description">Description Currently Unavailable\n\n- Coming Soon! -</string>
     <string name="action_settings">action settings</string>
     <string name="home">home</string>
     <string name="setting">setting</string>
