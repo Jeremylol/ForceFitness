@@ -37,7 +37,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL1, item);
 
         Log.d(TAG, "addData: Adding " + item + " to " + TABLE_NAME);
-
         long result = db.insert(TABLE_NAME, null, contentValues);
 
         //if date as inserted incorrectly it will return -1
@@ -64,11 +63,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
-    public void deleteName(int id, String name) {
+    void deleteName(String name) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE FROM " + TABLE_NAME + " WHERE "
-                + COL0 + " = '" + id + "'" +
-                " AND " + COL1 + " = '" + name + "'";
+                + COL1 + " = '" + name + "'";
         Log.d(TAG, "deleteName: query: " + query);
         Log.d(TAG, "deleteName: Deleting " + name + " from database.");
         db.execSQL(query);

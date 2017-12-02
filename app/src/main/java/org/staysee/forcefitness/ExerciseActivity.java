@@ -1,7 +1,6 @@
 package org.staysee.forcefitness;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
@@ -25,7 +24,6 @@ public class ExerciseActivity extends AppCompatActivity {
     private String workoutTitle;
 
     DatabaseHelper mDatabaseHelper;
-    Cursor dataId;
     Boolean activated = true;
 
     @Override
@@ -91,7 +89,7 @@ public class ExerciseActivity extends AppCompatActivity {
                 this.startActivity(myIntent);
                 overridePendingTransition(R.anim.fade_from_left, 0);
                 return true;
-            case R.id.action_fav:
+            case R.id.action_favorite_class:
                 startActivity(new Intent(this, FavoritesActivity.class));
                 overridePendingTransition(R.anim.fade_from_left, 0);
                 return true;
@@ -103,10 +101,9 @@ public class ExerciseActivity extends AppCompatActivity {
             case R.id.action_favorite:
                 if (activated) {
                     addData(workoutTitle);
-                    dataId = mDatabaseHelper.getItemID(workoutTitle);
                     activated = false;
                 } else {
-                    deleteName(dataId.getPosition(), workoutTitle);
+                    deleteName(workoutTitle);
                     activated = true;
                 }
                 return true;
@@ -126,8 +123,8 @@ public class ExerciseActivity extends AppCompatActivity {
         }
     }
 
-    public void deleteName(int id, String name) {
-        mDatabaseHelper.deleteName(id, name);
+    public void deleteName(String name) {
+        mDatabaseHelper.deleteName(name);
         Toast.makeText(getApplicationContext(), "Workout Deleted!",
                 Toast.LENGTH_SHORT).show();
     }
