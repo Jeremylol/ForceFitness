@@ -1,6 +1,7 @@
 package org.staysee.forcefitness;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
@@ -16,14 +17,18 @@ public class ExerciseActivity extends AppCompatActivity {
 
     private static final String TAG = "ExerciseActivity";
 
-    String workoutTitle;
-
     DatabaseHelper mDatabaseHelper;
+    private String workoutTitle;
+    Cursor dataId;
+    Boolean activated = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
+
+        mDatabaseHelper = new DatabaseHelper(this);
+
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar_exercise);
         setSupportActionBar(myToolbar);
 
@@ -37,6 +42,7 @@ public class ExerciseActivity extends AppCompatActivity {
         VideoView video = (VideoView) findViewById(R.id.videoView);
 
         workoutTitle = workoutTitle.toLowerCase().replaceAll("\\s", "");
+
         video.setVideoPath("android.resource://" + getPackageName() + "/raw/" + workoutTitle);
         video.requestFocus();
         video.start();
@@ -72,7 +78,14 @@ public class ExerciseActivity extends AppCompatActivity {
                 return true;
 
             case R.id.action_favorite:
-                addData(workoutTitle);
+                if (activated) {
+                    addData(workoutTitle);
+                    dataId = mDatabaseHelper.getItemID(workoutTitle);
+                    activated = false;
+                } else {
+                    deleteName(dataId.getPosition(), workoutTitle);
+                    activated = true;
+                }
                 return true;
             default:
                 // If we got here, the user's action was not recognized.
@@ -90,5 +103,11 @@ public class ExerciseActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "This is not a routine you can add",
                     Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void deleteName(int id, String name) {
+        mDatabaseHelper.deleteName(id, name);
+        Toast.makeText(getApplicationContext(), "Workout Deleted!",
+                Toast.LENGTH_SHORT).show();
     }
 }
