@@ -1,7 +1,6 @@
 Bench Press
 Flat Chest Flies
-Flat Chest Presses
+Flat Chest Press
 Incline Chest Flies
-Incline Chest Presses
-Pushup
+Incline Chest Press
 Seated Chest Press

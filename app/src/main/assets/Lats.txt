@@ -1,5 +1,6 @@
 Barbell Bentover Row
 Closegrip Pulldown
+Dumbbell Pullover
 One Arm Cable High Row
 Overhand Pullup
 Seated Pulldown
