@@ -13,12 +13,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
+
 public class ExerciseActivity extends AppCompatActivity {
 
     private static final String TAG = "ExerciseActivity";
 
-    DatabaseHelper mDatabaseHelper;
+    private String muscle;
     private String workoutTitle;
+
+    DatabaseHelper mDatabaseHelper;
     Cursor dataId;
     Boolean activated = true;
 
@@ -26,23 +32,19 @@ public class ExerciseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
-
-        mDatabaseHelper = new DatabaseHelper(this);
-
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar_exercise);
         setSupportActionBar(myToolbar);
+        mDatabaseHelper = new DatabaseHelper(this);
 
-        workoutTitle = getIntent().getStringExtra("EXTRA_MUSCLE_GROUP");
+        muscle = getIntent().getStringExtra("MUSCLE");
+        workoutTitle = getIntent().getStringExtra("WORKOUT_EXERCISE");
         setTitle(workoutTitle);
         TextView title = (TextView) findViewById(R.id.toolbar_title);
         title.setText(workoutTitle);
 
         getWindow().setFormat(PixelFormat.UNKNOWN);
-
         VideoView video = (VideoView) findViewById(R.id.videoView);
-
         workoutTitle = workoutTitle.toLowerCase().replaceAll("\\s", "");
-
         video.setVideoPath("android.resource://" + getPackageName() + "/raw/" + workoutTitle);
         video.requestFocus();
         video.start();
@@ -51,6 +53,21 @@ public class ExerciseActivity extends AppCompatActivity {
                 mp.setLooping(true);
             }
         });
+
+        TextView tV = (TextView) findViewById(R.id.description);
+        try {
+            InputStream IS = getAssets().open(workoutTitle + ".txt");
+            Scanner input = new Scanner(IS);
+            String description = "";
+            while (input.hasNextLine()) {
+                description += input.nextLine() + "\n\n";
+            }
+            tV.setText(description);
+            input.close();
+            IS.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -68,8 +85,10 @@ public class ExerciseActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.home:
-                finish();
+            case android.R.id.home:
+                Intent myIntent = new Intent(this, WorkoutActivity.class);
+                myIntent.putExtra("MUSCLE_GROUP", muscle);
+                this.startActivity(myIntent);
                 overridePendingTransition(R.anim.fade_from_left, 0);
                 return true;
             case R.id.action_main_menu:
@@ -88,8 +107,6 @@ public class ExerciseActivity extends AppCompatActivity {
                 }
                 return true;
             default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
         }
     }

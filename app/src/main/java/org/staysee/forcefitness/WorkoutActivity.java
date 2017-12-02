@@ -25,7 +25,7 @@ public class WorkoutActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar_workout);
         setSupportActionBar(myToolbar);
 
-        String muscleGroup = getIntent().getStringExtra("EXTRA_MUSCLE_GROUP");
+        final String muscleGroup = getIntent().getStringExtra("MUSCLE_GROUP");
         setTitle(muscleGroup);
         TextView title = (TextView) findViewById(R.id.toolbar_title);
         title.setText(muscleGroup);
@@ -58,7 +58,8 @@ public class WorkoutActivity extends AppCompatActivity {
                     Button button = (Button) v;
                     String buttonText = button.getText().toString();
                     Intent myIntent = new Intent(WorkoutActivity.this, ExerciseActivity.class);
-                    myIntent.putExtra("EXTRA_MUSCLE_GROUP", buttonText);
+                    myIntent.putExtra("MUSCLE", muscleGroup);
+                    myIntent.putExtra("WORKOUT_EXERCISE", buttonText);
                     startActivity(myIntent);
                 }
             });
@@ -81,7 +82,8 @@ public class WorkoutActivity extends AppCompatActivity {
                         Button button = (Button) v;
                         String buttonText = button.getText().toString();
                         Intent myIntent = new Intent(WorkoutActivity.this, ExerciseActivity.class);
-                        myIntent.putExtra("EXTRA_MUSCLE_GROUP", buttonText);
+                        myIntent.putExtra("MUSCLE", muscleGroup);
+                        myIntent.putExtra("WORKOUT_EXERCISE", buttonText);
                         startActivity(myIntent);
                     }
                 });

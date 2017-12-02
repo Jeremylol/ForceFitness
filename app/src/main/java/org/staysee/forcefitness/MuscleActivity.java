@@ -36,7 +36,7 @@ public class MuscleActivity extends AppCompatActivity {
         Button button = (Button) v;
         String buttonText = button.getText().toString();
         Intent myIntent = new Intent(this, WorkoutActivity.class);
-        myIntent.putExtra("EXTRA_MUSCLE_GROUP", buttonText);
+        myIntent.putExtra("MUSCLE_GROUP", buttonText);
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.fade_from_left, 0);
     }
