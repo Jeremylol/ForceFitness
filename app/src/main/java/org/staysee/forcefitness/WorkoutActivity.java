@@ -58,6 +58,7 @@ public class WorkoutActivity extends AppCompatActivity {
                     Button button = (Button) v;
                     String buttonText = button.getText().toString();
                     Intent myIntent = new Intent(WorkoutActivity.this, ExerciseActivity.class);
+                    myIntent.putExtra("SOURCE", "workout");
                     myIntent.putExtra("MUSCLE", muscleGroup);
                     myIntent.putExtra("WORKOUT_EXERCISE", buttonText);
                     startActivity(myIntent);
@@ -72,9 +73,7 @@ public class WorkoutActivity extends AppCompatActivity {
 
             for (int i = 1; i < buttons.length; i++) {
                 buttons[i] = new Button(this);
-                String text = input2.nextLine();
-                Log.d("TEXT", text);
-                buttons[i].setText(text);
+                buttons[i].setText(input2.nextLine());
                 buttons[i].setId(i+1);
                 buttons[i].setTextSize(35);
                 buttons[i].setOnClickListener(new View.OnClickListener() {
@@ -82,6 +81,7 @@ public class WorkoutActivity extends AppCompatActivity {
                         Button button = (Button) v;
                         String buttonText = button.getText().toString();
                         Intent myIntent = new Intent(WorkoutActivity.this, ExerciseActivity.class);
+                        myIntent.putExtra("SOURCE", "workout");
                         myIntent.putExtra("MUSCLE", muscleGroup);
                         myIntent.putExtra("WORKOUT_EXERCISE", buttonText);
                         startActivity(myIntent);

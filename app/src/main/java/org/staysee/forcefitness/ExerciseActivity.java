@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
@@ -20,6 +19,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
     private static final String TAG = "ExerciseActivity";
 
+    private String source;
     private String muscle;
     private String workoutTitle;
 
@@ -34,6 +34,7 @@ public class ExerciseActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         mDatabaseHelper = new DatabaseHelper(this);
 
+        source = getIntent().getStringExtra("SOURCE");
         muscle = getIntent().getStringExtra("MUSCLE");
         workoutTitle = getIntent().getStringExtra("WORKOUT_EXERCISE");
         setTitle(workoutTitle);
@@ -84,9 +85,14 @@ public class ExerciseActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent myIntent = new Intent(this, WorkoutActivity.class);
-                myIntent.putExtra("MUSCLE_GROUP", muscle);
-                this.startActivity(myIntent);
+                if (source.equals("workout")) {
+                    Intent myIntent = new Intent(this, WorkoutActivity.class);
+                    myIntent.putExtra("MUSCLE_GROUP", muscle);
+                    this.startActivity(myIntent);
+                } else {
+                    Intent myIntent = new Intent(this, FavoritesActivity.class);
+                    this.startActivity(myIntent);
+                }
                 overridePendingTransition(R.anim.fade_from_left, 0);
                 return true;
             case R.id.action_favorite_class:

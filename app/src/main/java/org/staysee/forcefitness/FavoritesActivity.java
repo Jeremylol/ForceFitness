@@ -3,15 +3,16 @@ package org.staysee.forcefitness;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.constraint.ConstraintSet;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.support.constraint.ConstraintLayout;
+import android.support.constraint.Guideline;
 
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ public class FavoritesActivity extends AppCompatActivity {
     private static final String TAG = "FavoritesActivity";
 
     DatabaseHelper mDatabaseHelper;
-    private ListView mListView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +29,11 @@ public class FavoritesActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar_favorites);
         setSupportActionBar(myToolbar);
 
-        mListView = (ListView) findViewById(R.id.listView);
         mDatabaseHelper = new DatabaseHelper(this);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back_arrow);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
@@ -43,43 +42,68 @@ public class FavoritesActivity extends AppCompatActivity {
 
     private void populateListView() {
         Log.d(TAG, "populateListView: Displaying data in the ListView.");
-
         //get the data and append to a list
         Cursor data = mDatabaseHelper.getData();
-        ArrayList<String> listData = new ArrayList<>();
+
+        ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.Favorites_Activity_Constraint_Layout);
+        ConstraintSet set = new ConstraintSet();
+        set.clone(layout);
+
+        Guideline guideline = (Guideline) findViewById(R.id.guideline);
+        int buttonNum = 0;
+        ArrayList<String> favTitles = new ArrayList<>();
         while (data.moveToNext()) {
-            //get the value from the database in column 1
-            //then add it to the ArrayList
-            listData.add(data.getString(1));
+            buttonNum++;
+            favTitles.add(data.getString(1));
         }
-
-        //create the list adapter and set the adapter
-        ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listData);
-        mListView.setAdapter(adapter);
-
-        //set an onItemClickListener to the ListView
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String name = adapterView.getItemAtPosition(i).toString();
-                Log.d(TAG, "onItemClick: You Clicked on " + name);
-
-                Cursor data = mDatabaseHelper.getItemID(name); //get the id associated with that name
-                int itemID = -1;
-                while (data.moveToNext()) {
-                    itemID = data.getInt(0);
-                }
-                if (itemID > -1) {
-                    Log.d(TAG, "onItemClick: The ID is: " + itemID);
-                    Intent editScreenIntent = new Intent(FavoritesActivity.this, ExerciseActivity.class);
-                    editScreenIntent.putExtra("id", itemID);
-                    editScreenIntent.putExtra("name", name);
-                    startActivity(editScreenIntent);
-                }
+        Log.d("THIS IS WHAT YOURE", Integer.toString(buttonNum));
+        data.close();
+        Button[] buttons = new Button[buttonNum];
+        buttons[0] = new Button(this);
+        buttons[0].setText(favTitles.get(0));
+        buttons[0].setId(1);
+        buttons[0].setTextSize(35);
+        buttons[0].setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Button button = (Button) v;
+                String buttonText = button.getText().toString();
+                Intent myIntent = new Intent(FavoritesActivity.this, ExerciseActivity.class);
+                myIntent.putExtra("SOURCE", "favorites");
+                myIntent.putExtra("WORKOUT_EXERCISE", buttonText);
+                startActivity(myIntent);
             }
         });
+        layout.addView(buttons[0]);
+        set.connect(buttons[0].getId(), ConstraintSet.TOP, guideline.getId(), ConstraintSet.BOTTOM, 0);
+        set.connect(buttons[0].getId(), ConstraintSet.RIGHT, ConstraintSet.PARENT_ID, ConstraintSet.RIGHT, 0);
+        set.connect(buttons[0].getId(), ConstraintSet.LEFT, ConstraintSet.PARENT_ID, ConstraintSet.LEFT, 0);
+        set.constrainHeight(buttons[0].getId(), 200);
+        set.applyTo(layout);
+
+        for (int i = 1; i < buttons.length; i++) {
+            buttons[i] = new Button(this);
+            buttons[i].setText(favTitles.get(i));
+            buttons[i].setId(i + 1);
+            buttons[i].setTextSize(35);
+            buttons[i].setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Button button = (Button) v;
+                    String buttonText = button.getText().toString();
+                    Intent myIntent = new Intent(FavoritesActivity.this, ExerciseActivity.class);
+                    myIntent.putExtra("SOURCE", "favorites");
+                    myIntent.putExtra("WORKOUT_EXERCISE", buttonText);
+                    startActivity(myIntent);
+                }
+            });
+            layout.addView(buttons[i]);
+            set.connect(buttons[i].getId(), ConstraintSet.TOP, buttons[i - 1].getId(), ConstraintSet.BOTTOM, 0);
+            set.connect(buttons[i].getId(), ConstraintSet.RIGHT, ConstraintSet.PARENT_ID, ConstraintSet.RIGHT, 0);
+            set.connect(buttons[i].getId(), ConstraintSet.LEFT, ConstraintSet.PARENT_ID, ConstraintSet.LEFT, 0);
+            set.constrainHeight(buttons[i].getId(), 200);
+            set.applyTo(layout);
+        }
     }
-    
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home)
@@ -87,5 +111,4 @@ public class FavoritesActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.fade_from_left, 0);
         return super.onOptionsItemSelected(item);
     }
-
 }
