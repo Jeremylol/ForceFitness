@@ -7,7 +7,6 @@ import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -90,6 +89,10 @@ public class ExerciseActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(this, WorkoutActivity.class);
                 myIntent.putExtra("MUSCLE_GROUP", muscle);
                 this.startActivity(myIntent);
+                overridePendingTransition(R.anim.fade_from_left, 0);
+                return true;
+            case R.id.action_fav:
+                startActivity(new Intent(this, FavoritesActivity.class));
                 overridePendingTransition(R.anim.fade_from_left, 0);
                 return true;
             case R.id.action_main_menu:
