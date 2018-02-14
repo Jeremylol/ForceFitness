@@ -18,19 +18,22 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:parentActivityName=".MainMenuActivity"></activity>
+            android:parentActivityName=".MainMenuActivity" />
         <activity
             android:name=".MuscleActivity"
-            android:parentActivityName=".MainMenuActivity"></activity>
+            android:parentActivityName=".MainMenuActivity" />
+        <activity
+            android:name=".AboutActivity"
+            android:parentActivityName=".MainMenuActivity" />
         <activity
             android:name=".FavoritesActivity"
-            android:parentActivityName=".MainMenuActivity"></activity>
+            android:parentActivityName=".MainMenuActivity" />
         <activity
             android:name=".WorkoutActivity"
-            android:parentActivityName=".MuscleActivity"></activity>
+            android:parentActivityName=".MuscleActivity" />
         <activity
             android:name=".ExerciseActivity"
-            android:parentActivityName=".WorkoutActivity"></activity>
+            android:parentActivityName=".WorkoutActivity" />
     </application>
 
 </manifest>

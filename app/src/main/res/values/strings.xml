@@ -29,5 +29,17 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login_attempts">Number of Attempts Remaining: 3</string>
-
+    <string name="about_synopsis">
+        \tForce fitness is an application that you should like at as your own personal trainer. From looking for the right workout to creating your own schedule, Force Fitness is the recipe for becoming more confident in the gym.
+\n\nBefore You Start: Safety Precautions:
+\n\tIf you are planning to increase your physical activity or start an exercise program, you start with a sedentary activity—answering a few short questions, that is. The PAR-Q (Physical Activity Readiness Questionnaire) is the gold standard in fitness safety, used by doctors, trainers and health clubs the world over. Usually comprised of 5-7 questions, it can help rule out any underlying health concerns that could worsen with exercise. Answer yes or no to the following questions.
+\n\nHas your doctor ever said that you have a heart condition and that you should only do physical activity recommended by a doctor?
+\n\nDo you feel pain in your chest when you do physical activity?
+\n\nIn the past month, have you had chest pain when you were not doing physical activity?
+\n\nDo you lose your balance because of dizziness or do you ever lose consciousness?
+\n\nDo you have a bone or joint problem (for example, back, knee, or hip) that could be made worse by a change in your physical activity?
+\n\nIs your doctor currently prescribing drugs (for example, water pills) for your blood pressure or heart condition?
+\n\nDo you know of any other reason why you should not do physical activity?
+\n\nIf you answer YES to any of the questions on this list, you must check in with your doctor and get cleared for exercise before you start.
+    </string>
 </resources>
