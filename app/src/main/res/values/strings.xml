@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Force Fitness</string>
-    <string name="muscles">Muscles</string>
+    <string name="muscles">Muscle Groups</string>
     <string name="Quads">Quads</string>
     <string name="Lats">Lats</string>
     <string name="Lowerback">Lowerback</string>
@@ -16,8 +16,8 @@
     <string name="Triceps">Triceps</string>
     <string name="schedule">Workout Schedule</string>
     <string name="about">About</string>
-    <string name="workout">Workout Routines</string>
-    <string name="Favorites">Favorite Workouts</string>
+    <string name="workout">Exercises</string>
+    <string name="Favorites">Favorite Exercises</string>
     <string name="login">Log In</string>
     <string name="profile">Profile</string>
     <string name="favorites_title">Favorites</string>
@@ -29,6 +29,7 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login_attempts">Number of Attempts Remaining: 3</string>
+    <string name="noFavorites">"You have no favorites"</string>
     <string name="about_synopsis">
         \tForce fitness is an application that you should like at as your own personal trainer. From looking for the right workout to creating your own schedule, Force Fitness is the recipe for becoming more confident in the gym. Easily track your workouts and progress with the ForceFitness Workout Application.
 Our goal was to make recording your workouts and logs on the Android simple. Create routines, largest exercise database, view progress, manage your stats, and synchronize your data

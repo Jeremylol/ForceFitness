@@ -3,7 +3,6 @@ package org.staysee.forcefitness;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
@@ -51,7 +50,8 @@ public class WorkoutActivity extends AppCompatActivity {
             Scanner input2 = new Scanner (IS2);
             buttons[0] = new Button(this);
             buttons[0].setText(input2.nextLine());
-            buttons[0].setId(1);
+            buttons[0].setId(R.id.buttonfun);
+            buttons[0].setBackgroundResource(R.color.buttonColor);
             buttons[0].setTextSize(35);
             buttons[0].setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
@@ -76,6 +76,7 @@ public class WorkoutActivity extends AppCompatActivity {
                 buttons[i].setText(input2.nextLine());
                 buttons[i].setId(i+1);
                 buttons[i].setTextSize(35);
+                buttons[i].setBackgroundResource(R.color.buttonColor);
                 buttons[i].setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         Button button = (Button) v;
@@ -88,9 +89,9 @@ public class WorkoutActivity extends AppCompatActivity {
                     }
                 });
                 layout.addView(buttons[i]);
-                set.connect(buttons[i].getId(), ConstraintSet.TOP, buttons[i-1].getId(), ConstraintSet.BOTTOM, 0);
-                set.connect(buttons[i].getId(),ConstraintSet.RIGHT,ConstraintSet.PARENT_ID,ConstraintSet.RIGHT,0);
-                set.connect(buttons[i].getId(),ConstraintSet.LEFT,ConstraintSet.PARENT_ID,ConstraintSet.LEFT,0);
+                set.connect(buttons[i].getId(), ConstraintSet.TOP, buttons[i - 1].getId(), ConstraintSet.BOTTOM, 15);
+                set.connect(buttons[i].getId(), ConstraintSet.RIGHT, ConstraintSet.PARENT_ID, ConstraintSet.RIGHT, 15);
+                set.connect(buttons[i].getId(), ConstraintSet.LEFT, ConstraintSet.PARENT_ID, ConstraintSet.LEFT, 15);
                 set.constrainHeight(buttons[i].getId(), 200);
                 set.applyTo(layout);
             }

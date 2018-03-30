@@ -46,21 +46,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /**
      * Returns all the data from database
      *
-     * @return
      */
     public Cursor getData() {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME;
-        Cursor data = db.rawQuery(query, null);
-        return data;
+        return db.rawQuery(query, null);
     }
 
     public Cursor getItemID(String name) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT " + COL0 + " FROM " + TABLE_NAME +
                 " WHERE " + COL1 + " = '" + name + "'";
-        Cursor data = db.rawQuery(query, null);
-        return data;
+        return db.rawQuery(query, null);
     }
 
     void deleteName(String name) {

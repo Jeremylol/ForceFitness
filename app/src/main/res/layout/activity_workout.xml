@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColor="@color/colorWords"
-            android:textSize="40sp" />
+            android:textSize="50sp" />
     </android.support.v7.widget.Toolbar>
 
     <ScrollView
@@ -50,6 +50,12 @@
             android:id="@+id/Workout_Activity_Constraint_Layout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/buttonfun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
 
             <android.support.constraint.Guideline
                 android:id="@+id/guideline"

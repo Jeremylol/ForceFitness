@@ -56,7 +56,7 @@ public class FavoritesActivity extends AppCompatActivity {
         if (data.getCount() == 0) {
             data.close();
             TextView textview = (TextView) findViewById(R.id.textView2);
-            textview.setText("You have no favorites");
+            textview.setText(R.string.noFavorites);
             textview.setTextSize(35);
         } else {
             while (data.moveToNext()) {
@@ -69,8 +69,9 @@ public class FavoritesActivity extends AppCompatActivity {
             Button[] buttons = new Button[buttonNum];
             buttons[0] = new Button(this);
             buttons[0].setText(favTitles.get(0));
-            buttons[0].setId(1);
+            buttons[0].setId(R.id.buttonFun1);
             buttons[0].setTextSize(35);
+            buttons[0].setBackgroundResource(R.color.buttonColor);
             buttons[0].setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Button button = (Button) v;
@@ -93,6 +94,7 @@ public class FavoritesActivity extends AppCompatActivity {
                 buttons[i].setText(favTitles.get(i));
                 buttons[i].setId(i + 1);
                 buttons[i].setTextSize(35);
+                buttons[i].setBackgroundResource(R.color.buttonColor);
                 buttons[i].setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         Button button = (Button) v;
@@ -104,9 +106,9 @@ public class FavoritesActivity extends AppCompatActivity {
                     }
                 });
                 layout.addView(buttons[i]);
-                set.connect(buttons[i].getId(), ConstraintSet.TOP, buttons[i - 1].getId(), ConstraintSet.BOTTOM, 0);
-                set.connect(buttons[i].getId(), ConstraintSet.RIGHT, ConstraintSet.PARENT_ID, ConstraintSet.RIGHT, 0);
-                set.connect(buttons[i].getId(), ConstraintSet.LEFT, ConstraintSet.PARENT_ID, ConstraintSet.LEFT, 0);
+                set.connect(buttons[i].getId(), ConstraintSet.TOP, buttons[i - 1].getId(), ConstraintSet.BOTTOM, 15);
+                set.connect(buttons[i].getId(), ConstraintSet.RIGHT, ConstraintSet.PARENT_ID, ConstraintSet.RIGHT, 15);
+                set.connect(buttons[i].getId(), ConstraintSet.LEFT, ConstraintSet.PARENT_ID, ConstraintSet.LEFT, 15);
                 set.constrainHeight(buttons[i].getId(), 200);
                 set.applyTo(layout);
             }

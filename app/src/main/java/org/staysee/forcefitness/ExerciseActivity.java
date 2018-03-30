@@ -24,7 +24,8 @@ public class ExerciseActivity extends AppCompatActivity {
     private String workoutTitle;
 
     DatabaseHelper mDatabaseHelper;
-    Boolean activated = true;
+    public Boolean activated = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +79,7 @@ public class ExerciseActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
-
+        updateMenu(menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -108,9 +109,13 @@ public class ExerciseActivity extends AppCompatActivity {
             case R.id.action_favorite:
                 if (activated) {
                     addData(workoutTitle);
+                    item.setIcon(R.mipmap.favorite_filled);
+                    overridePendingTransition(R.anim.fade_from_left, 0);
                     activated = false;
                 } else {
                     deleteName(workoutTitle);
+                    item.setIcon(R.drawable.favorite_border);
+                    overridePendingTransition(R.anim.fade_from_left, 0);
                     activated = true;
                 }
                 return true;
@@ -135,4 +140,14 @@ public class ExerciseActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Workout Deleted!",
                 Toast.LENGTH_SHORT).show();
     }
+
+    public void updateMenu(Menu menu) {
+        if (mDatabaseHelper.getItemID(workoutTitle).getCount() > 0) {
+            activated = false;
+            MenuItem item = menu.findItem(R.id.action_favorite);
+            item.setIcon(R.mipmap.favorite_filled);
+            overridePendingTransition(R.anim.fade_from_left, 0);
+        }
+    }
+
 }
