@@ -8,12 +8,6 @@
     android:background="@color/background"
     tools:context="org.staysee.forcefitness.FavoritesActivity">
 
-    <Button
-        android:id="@+id/buttonFun1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="" />
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar_favorites"
         android:minHeight="90dp"
@@ -58,8 +52,20 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
+            <Button
+                android:id="@+id/buttonFun1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <ImageView
+                android:id="@+id/imageViewFun1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="ContentDescription" />
+
             <android.support.constraint.Guideline
-                android:id="@+id/guideline"
+                android:id="@+id/guidelinefav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -70,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                app:layout_constraintTop_toTopOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/guidelinefav"
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="8dp"
                 app:layout_constraintRight_toRightOf="parent"

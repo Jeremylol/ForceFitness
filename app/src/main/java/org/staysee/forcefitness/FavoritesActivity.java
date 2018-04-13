@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.Guideline;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -49,7 +50,7 @@ public class FavoritesActivity extends AppCompatActivity {
         ConstraintSet set = new ConstraintSet();
         set.clone(layout);
 
-        Guideline guideline = (Guideline) findViewById(R.id.guideline);
+        Guideline guideline = (Guideline) findViewById(R.id.guidelinefav);
         int buttonNum = 0;
         ArrayList<String> favTitles = new ArrayList<>();
 
@@ -66,10 +67,23 @@ public class FavoritesActivity extends AppCompatActivity {
             Log.d("THIS IS WHAT YOURE", Integer.toString(buttonNum));
             data.close();
 
+            ImageView[] images = new ImageView[buttonNum];
+
+            images[0] = new ImageView(this);
+            images[0].setBackgroundResource(R.color.buttonColor);
+            images[0].setImageResource(R.mipmap.abs);
+            images[0].setId(R.id.imageViewFun);
+            layout.addView(images[0]);
+            set.connect(images[0].getId(), ConstraintSet.TOP, guideline.getId(), ConstraintSet.BOTTOM, 0);
+            set.connect(images[0].getId(), ConstraintSet.LEFT, ConstraintSet.PARENT_ID, ConstraintSet.LEFT, 0);
+            set.constrainHeight(images[0].getId(), 225);
+            set.constrainWidth(images[0].getId(), 225);
+            set.applyTo(layout);
+
             Button[] buttons = new Button[buttonNum];
             buttons[0] = new Button(this);
             buttons[0].setText(favTitles.get(0));
-            buttons[0].setId(R.id.buttonFun1);
+            buttons[0].setId(R.id.buttonfun);
             buttons[0].setTextSize(35);
             buttons[0].setBackgroundResource(R.color.buttonColor);
             buttons[0].setOnClickListener(new View.OnClickListener() {
@@ -85,11 +99,22 @@ public class FavoritesActivity extends AppCompatActivity {
             layout.addView(buttons[0]);
             set.connect(buttons[0].getId(), ConstraintSet.TOP, guideline.getId(), ConstraintSet.BOTTOM, 0);
             set.connect(buttons[0].getId(), ConstraintSet.RIGHT, ConstraintSet.PARENT_ID, ConstraintSet.RIGHT, 0);
-            set.connect(buttons[0].getId(), ConstraintSet.LEFT, ConstraintSet.PARENT_ID, ConstraintSet.LEFT, 0);
-            set.constrainHeight(buttons[0].getId(), 200);
+            set.connect(buttons[0].getId(), ConstraintSet.START, images[0].getId(), ConstraintSet.END, 13);
+            set.constrainHeight(buttons[0].getId(), 225);
             set.applyTo(layout);
 
             for (int i = 1; i < buttons.length; i++) {
+                images[i] = new ImageView(this);
+                images[i].setBackgroundResource(R.color.buttonColor);
+                images[i].setImageResource(R.mipmap.abs);
+                images[i].setId(R.id.imageViewFun + i);
+                layout.addView(images[i]);
+                set.connect(images[i].getId(), ConstraintSet.TOP, images[i - 1].getId(), ConstraintSet.BOTTOM, 15);
+                set.connect(images[i].getId(), ConstraintSet.LEFT, ConstraintSet.PARENT_ID, ConstraintSet.LEFT, 0);
+                set.constrainHeight(images[i].getId(), 225);
+                set.constrainWidth(images[i].getId(), 225);
+                set.applyTo(layout);
+
                 buttons[i] = new Button(this);
                 buttons[i].setText(favTitles.get(i));
                 buttons[i].setId(i + 1);
@@ -107,9 +132,9 @@ public class FavoritesActivity extends AppCompatActivity {
                 });
                 layout.addView(buttons[i]);
                 set.connect(buttons[i].getId(), ConstraintSet.TOP, buttons[i - 1].getId(), ConstraintSet.BOTTOM, 15);
-                set.connect(buttons[i].getId(), ConstraintSet.RIGHT, ConstraintSet.PARENT_ID, ConstraintSet.RIGHT, 15);
-                set.connect(buttons[i].getId(), ConstraintSet.LEFT, ConstraintSet.PARENT_ID, ConstraintSet.LEFT, 15);
-                set.constrainHeight(buttons[i].getId(), 200);
+                set.connect(buttons[i].getId(), ConstraintSet.RIGHT, ConstraintSet.PARENT_ID, ConstraintSet.RIGHT, 0);
+                set.connect(buttons[i].getId(), ConstraintSet.START, images[i].getId(), ConstraintSet.END, 13);
+                set.constrainHeight(buttons[i].getId(), 225);
                 set.applyTo(layout);
             }
         }
