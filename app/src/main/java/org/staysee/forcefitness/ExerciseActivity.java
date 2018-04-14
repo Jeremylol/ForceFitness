@@ -18,7 +18,6 @@ import java.util.Scanner;
 public class ExerciseActivity extends AppCompatActivity {
 
     private static final String TAG = "ExerciseActivity";
-//lol
     private String source;
     private String muscle;
     private String workoutTitle;
