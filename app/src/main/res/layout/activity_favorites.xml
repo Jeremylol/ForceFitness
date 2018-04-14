@@ -69,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="108dp" />
+                app:layout_constraintGuide_begin="103dp" />
 
             <TextView
                 android:id="@+id/textView2"

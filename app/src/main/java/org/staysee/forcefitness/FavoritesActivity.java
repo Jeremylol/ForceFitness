@@ -38,10 +38,16 @@ public class FavoritesActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        populateListView();
+        try {
+            populateListView();
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.getMessage();
+        }
     }
 
-    private void populateListView() {
+    private void populateListView() throws NoSuchFieldException, IllegalAccessException {
         Log.d(TAG, "populateListView: Displaying data in the ListView.");
         //get the data and append to a list
         Cursor data = mDatabaseHelper.getData();
@@ -67,11 +73,12 @@ public class FavoritesActivity extends AppCompatActivity {
             Log.d("THIS IS WHAT YOURE", Integer.toString(buttonNum));
             data.close();
 
+            String name = favTitles.get(0).replaceAll("\\s", "").toLowerCase();
+            int resourceId = R.mipmap.class.getField(name).getInt(null);
             ImageView[] images = new ImageView[buttonNum];
-
             images[0] = new ImageView(this);
+            images[0].setImageResource(resourceId);
             images[0].setBackgroundResource(R.color.buttonColor);
-            images[0].setImageResource(R.mipmap.abs);
             images[0].setId(R.id.imageViewFun);
             layout.addView(images[0]);
             set.connect(images[0].getId(), ConstraintSet.TOP, guideline.getId(), ConstraintSet.BOTTOM, 0);
@@ -104,9 +111,12 @@ public class FavoritesActivity extends AppCompatActivity {
             set.applyTo(layout);
 
             for (int i = 1; i < buttons.length; i++) {
+                String name1 = favTitles.get(i).replaceAll("\\s", "").toLowerCase();
+                int resourceId1 = R.mipmap.class.getField(name1).getInt(null);
+
                 images[i] = new ImageView(this);
                 images[i].setBackgroundResource(R.color.buttonColor);
-                images[i].setImageResource(R.mipmap.abs);
+                images[i].setImageResource(resourceId1);
                 images[i].setId(R.id.imageViewFun + i);
                 layout.addView(images[i]);
                 set.connect(images[i].getId(), ConstraintSet.TOP, images[i - 1].getId(), ConstraintSet.BOTTOM, 15);

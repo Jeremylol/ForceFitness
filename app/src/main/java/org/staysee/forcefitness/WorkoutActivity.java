@@ -51,11 +51,23 @@ public class WorkoutActivity extends AppCompatActivity {
             InputStream IS2 = getAssets().open(muscleGroup + ".txt");
             Scanner input2 = new Scanner (IS2);
 
+            // finding muscle image
+            InputStream IS3 = getAssets().open(muscleGroup + ".txt");
+            Scanner input3 = new Scanner(IS3);
             ImageView[] images = new ImageView[buttonNum];
-
+            String name = input3.nextLine().replaceAll("\\s", "").toLowerCase();
             images[0] = new ImageView(this);
+
+            try {
+                int resourceId = R.mipmap.class.getField(name).getInt(null);
+                images[0].setImageResource(resourceId);
+            } catch (IllegalAccessException e1) {
+                e1.printStackTrace();
+            } catch (NoSuchFieldException e1) {
+                e1.getMessage();
+            }
+
             images[0].setBackgroundResource(R.color.buttonColor);
-            images[0].setImageResource(R.mipmap.abwheelroller);
             images[0].setId(R.id.imageViewFun);
             layout.addView(images[0]);
             set.connect(images[0].getId(), ConstraintSet.TOP, guideline.getId(), ConstraintSet.BOTTOM, 0);
@@ -90,7 +102,15 @@ public class WorkoutActivity extends AppCompatActivity {
             for (int i = 1; i < buttons.length; i++) {
                 images[i] = new ImageView(this);
                 images[i].setBackgroundResource(R.color.buttonColor);
-                images[i].setImageResource(R.mipmap.abs);
+                String name1 = input3.nextLine().replaceAll("\\s", "").toLowerCase();
+                try {
+                    int resourceId = R.mipmap.class.getField(name1).getInt(null);
+                    images[i].setImageResource(resourceId);
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (NoSuchFieldException e) {
+                    e.getMessage();
+                }
                 images[i].setId(R.id.imageViewFun + i);
                 layout.addView(images[i]);
                 set.connect(images[i].getId(), ConstraintSet.TOP, images[i - 1].getId(), ConstraintSet.BOTTOM, 15);
