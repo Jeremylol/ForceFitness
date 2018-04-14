@@ -61,6 +61,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/buttonColor"
                 android:text="@string/schedule"
+                android:onClick="toScheduleActivity"
                 android:textSize="45sp"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline3"

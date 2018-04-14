@@ -29,6 +29,9 @@
             android:name=".FavoritesActivity"
             android:parentActivityName=".MainMenuActivity" />
         <activity
+            android:name=".ScheduleActivity"
+            android:parentActivityName=".MainMenuActivity" />
+        <activity
             android:name=".WorkoutActivity"
             android:parentActivityName=".MuscleActivity" />
         <activity
