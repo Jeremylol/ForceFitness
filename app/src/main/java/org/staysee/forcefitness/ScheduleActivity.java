@@ -40,7 +40,6 @@ public class ScheduleActivity extends AppCompatActivity {
         buttons[0] = new Button(this);
         buttons[0].setId(R.id.scheduleButton);
         buttons[0].setBackgroundResource(R.drawable.circle_add);
-        buttons[0].setBackgroundColor(Color.GRAY);
         buttons[0].setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             }
