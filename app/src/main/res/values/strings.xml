@@ -30,6 +30,7 @@
     <string name="password">Password</string>
     <string name="login_attempts">Number of Attempts Remaining: 3</string>
     <string name="noFavorites">"You have no favorites"</string>
+    <string name="incomplete">Incomplete</string>
     <string name="about_synopsis">
         \tForce fitness is an application that you should like at as your own personal trainer. From looking for the right workout to creating your own schedule, Force Fitness is the recipe for becoming more confident in the gym. Easily track your workouts and progress with the ForceFitness Workout Application.
 Our goal was to make recording your workouts and logs on the Android simple. Create routines, largest exercise database, view progress, manage your stats, and synchronize your data

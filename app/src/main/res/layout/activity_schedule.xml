@@ -52,11 +52,25 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/scheduleButton"
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                tools:ignore="HardcodedText" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/abs"
+                tools:ignore="ContentDescription" />
 
             <android.support.constraint.Guideline
                 android:id="@+id/guidelineSchedule"
