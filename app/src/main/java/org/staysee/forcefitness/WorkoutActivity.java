@@ -47,6 +47,7 @@ public class WorkoutActivity extends AppCompatActivity {
             }
             input.close();
             IS.close();
+
             Button[] buttons = new Button[buttonNum];
             InputStream IS2 = getAssets().open(muscleGroup + ".txt");
             Scanner input2 = new Scanner (IS2);
@@ -80,7 +81,7 @@ public class WorkoutActivity extends AppCompatActivity {
             buttons[0].setText(input2.nextLine());
             buttons[0].setId(R.id.buttonfun);
             buttons[0].setBackgroundResource(R.color.buttonColor);
-            buttons[0].setTextSize(35);
+            buttons[0].setTextSize(20);
             buttons[0].setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Button button = (Button) v;
@@ -95,8 +96,9 @@ public class WorkoutActivity extends AppCompatActivity {
             layout.addView(buttons[0]);
             set.connect(buttons[0].getId(), ConstraintSet.TOP, guideline.getId(), ConstraintSet.BOTTOM, 0);
             set.connect(buttons[0].getId(), ConstraintSet.RIGHT, ConstraintSet.PARENT_ID, ConstraintSet.RIGHT, 0);
-            set.connect(buttons[0].getId(), ConstraintSet.START, images[0].getId(), ConstraintSet.END, 13);
+            set.connect(buttons[0].getId(), ConstraintSet.START, images[0].getId(), ConstraintSet.END, 0);
             set.constrainHeight(buttons[0].getId(), 225);
+            set.constrainWidth(buttons[0].getId(), 830);
             set.applyTo(layout);
 
             for (int i = 1; i < buttons.length; i++) {
@@ -122,7 +124,7 @@ public class WorkoutActivity extends AppCompatActivity {
                 buttons[i] = new Button(this);
                 buttons[i].setText(input2.nextLine());
                 buttons[i].setId(i+1);
-                buttons[i].setTextSize(35);
+                buttons[i].setTextSize(20);
                 buttons[i].setBackgroundResource(R.color.buttonColor);
                 buttons[i].setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
@@ -138,8 +140,9 @@ public class WorkoutActivity extends AppCompatActivity {
                 layout.addView(buttons[i]);
                 set.connect(buttons[i].getId(), ConstraintSet.TOP, buttons[i - 1].getId(), ConstraintSet.BOTTOM, 15);
                 set.connect(buttons[i].getId(), ConstraintSet.RIGHT, ConstraintSet.PARENT_ID, ConstraintSet.RIGHT, 0);
-                set.connect(buttons[i].getId(), ConstraintSet.START, images[i].getId(), ConstraintSet.END, 13);
+                set.connect(buttons[i].getId(), ConstraintSet.START, images[i].getId(), ConstraintSet.END, 0);
                 set.constrainHeight(buttons[i].getId(), 225);
+                set.constrainWidth(buttons[i].getId(), 830);
                 set.applyTo(layout);
             }
         }

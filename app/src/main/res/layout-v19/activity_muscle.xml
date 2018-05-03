@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background"
+    tools:context="org.staysee.forcefitness.MuscleActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar_muscle"
+        android:minHeight="100dp"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:title="@+id/toolbar_title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back_arrow"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:targetApi="lollipop">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorWords"
+            android:textSize="30sp"
+            android:text="@string/muscles" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintGuide_end="320dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="73dp" />
+
+            <Button
+                android:id="@+id/button0"
+                android:background="@color/buttonColor"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="4dp"
+                android:onClick="onClick"
+                android:text="@string/Abs"
+                android:textSize="20sp"
+                app:layout_constraintHorizontal_bias="0.449"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline2"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/button1"
+                android:background="@color/buttonColor"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:onClick="onClick"
+                android:text="@string/Biceps"
+                android:textSize="20sp"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button0"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/button3"
+                android:background="@color/buttonColor"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:onClick="onClick"
+                android:text="@string/Chest"
+                android:textSize="20sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button1"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/button5"
+                android:background="@color/buttonColor"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:onClick="onClick"
+                android:text="@string/Glutes"
+                android:textSize="20sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button3"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/button6"
+                android:background="@color/buttonColor"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:onClick="onClick"
+                android:text="@string/Hamstrings"
+                android:textSize="20sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button5"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/button7"
+                android:background="@color/buttonColor"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:onClick="onClick"
+                android:text="@string/Lats"
+                android:textSize="20sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button6"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/button9"
+                android:background="@color/buttonColor"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:onClick="onClick"
+                android:text="@string/Quads"
+                android:textSize="20sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button7"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/button10"
+                android:background="@color/buttonColor"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:onClick="onClick"
+                android:text="@string/Shoulders"
+                android:textSize="20sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button9"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/button11"
+                android:background="@color/buttonColor"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:onClick="onClick"
+                android:text="@string/Traps"
+                android:textSize="20sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button10"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/button12"
+                android:background="@color/buttonColor"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:onClick="onClick"
+                android:text="@string/Triceps"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button11"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/Abs"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="@string/Abs"
+                android:background="@color/buttonColor"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/guideline2"
+                app:srcCompat="@mipmap/abs"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/Biceps"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/Biceps"
+                android:background="@color/buttonColor"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/Abs"
+                app:srcCompat="@mipmap/biceps"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/Chest"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/Chest"
+                android:background="@color/buttonColor"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/Biceps"
+                app:srcCompat="@mipmap/chest"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/Glutes"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/Glutes"
+                android:background="@color/buttonColor"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/Chest"
+                app:srcCompat="@mipmap/glutes"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/Hamstrings"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/Hamstrings"
+                android:background="@color/buttonColor"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/Glutes"
+                app:srcCompat="@mipmap/hamstrings"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/Lats"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/Lats"
+                android:background="@color/buttonColor"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/Hamstrings"
+                app:srcCompat="@mipmap/lats"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/Quads"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/Quads"
+                android:background="@color/buttonColor"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/Lats"
+                app:srcCompat="@mipmap/quads"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/Shoulders"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/Shoulders"
+                android:background="@color/buttonColor"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/Quads"
+                app:srcCompat="@mipmap/shoulders"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/Traps"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/Traps"
+                android:background="@color/buttonColor"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/Shoulders"
+                app:srcCompat="@mipmap/traps"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/Triceps"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/Triceps"
+                android:background="@color/buttonColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/Traps"
+                app:srcCompat="@mipmap/triceps"
+                tools:ignore="RtlHardcoded" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -64,7 +64,7 @@ public class FavoritesActivity extends AppCompatActivity {
             data.close();
             TextView textview = (TextView) findViewById(R.id.textView2);
             textview.setText(R.string.noFavorites);
-            textview.setTextSize(35);
+            textview.setTextSize(25);
         } else {
             while (data.moveToNext()) {
                 buttonNum++;
@@ -91,7 +91,7 @@ public class FavoritesActivity extends AppCompatActivity {
             buttons[0] = new Button(this);
             buttons[0].setText(favTitles.get(0));
             buttons[0].setId(R.id.buttonfun);
-            buttons[0].setTextSize(35);
+            buttons[0].setTextSize(20);
             buttons[0].setBackgroundResource(R.color.buttonColor);
             buttons[0].setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
@@ -128,7 +128,7 @@ public class FavoritesActivity extends AppCompatActivity {
                 buttons[i] = new Button(this);
                 buttons[i].setText(favTitles.get(i));
                 buttons[i].setId(i + 1);
-                buttons[i].setTextSize(35);
+                buttons[i].setTextSize(20);
                 buttons[i].setBackgroundResource(R.color.buttonColor);
                 buttons[i].setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {

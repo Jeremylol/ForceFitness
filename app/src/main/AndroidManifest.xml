@@ -5,6 +5,8 @@
 
     <application
         android:theme="@style/AppTheme"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -28,9 +30,6 @@
             android:parentActivityName=".MainMenuActivity" />
         <activity
             android:name=".FavoritesActivity"
-            android:parentActivityName=".MainMenuActivity" />
-        <activity
-            android:name=".ScheduleActivity"
             android:parentActivityName=".MainMenuActivity" />
         <activity
             android:name=".WorkoutActivity"

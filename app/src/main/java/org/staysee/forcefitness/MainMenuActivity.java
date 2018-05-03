@@ -33,9 +33,4 @@ public class MainMenuActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.fade_from_left, 0);
     }
 
-    public void toScheduleActivity(View v) {
-        startActivity(new Intent(this, ScheduleActivity.class));
-        overridePendingTransition(R.anim.fade_from_left, 0);
-    }
-
 }
